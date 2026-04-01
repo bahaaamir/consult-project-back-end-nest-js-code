@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap");
+
+/* ─── Brand tokens ─────────────────────────────────────────── */
+/* Used with CSS var() in arbitrary Tailwind values: bg-[var(--brand-2)] */
+:root {
+  --brand-1:   #0f3f75;
+  --brand-mid: #0073c8;
+  --brand-2:   #0ea5a6;
+  --sidebar-bg: #0b1120;
+}
+
+/* ─── Base typography ──────────────────────────────────────── */
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.title-font,
+h1, h2, h3, h4 {
+  font-family: "Sora", "Manrope", sans-serif;
+}
+
+/* ─── Keyframe animations ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.18; }
+  50%       { transform: scale(1.1); opacity: 0.26; }
+}
+
+/* ─── Animation helpers (Tailwind can't express keyframes inline) */
+.reveal          { animation: fadeUp 420ms ease-out both; }
+.reveal-delay-1  { animation-delay: 100ms; }
+.reveal-delay-2  { animation-delay: 200ms; }
+.reveal-delay-3  { animation-delay: 300ms; }
+
+.orb-pulse         { animation: orbPulse 6s ease-in-out infinite; }
+.orb-pulse-delayed { animation: orbPulse 6s ease-in-out infinite 3s; }

@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+*.log
+consult-psa/front-end-consult-angular21-code/
