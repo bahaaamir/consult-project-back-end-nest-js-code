@@ -1,0 +1,42 @@
+<app-ui-page-header title="UI Kit" subtitle="Tokens and shared UI wrappers demo." />
+
+<div class="ui-kit-grid">
+  <app-ui-card title="Tokens" subtitle="App-level CSS variables">
+    <div class="token-grid" aria-label="Token samples">
+      <div class="token-swatch" style="background: var(--app-primary)">
+        <span>--app-primary</span>
+      </div>
+      <div class="token-swatch" style="background: var(--app-surface-2); color: var(--app-text-1); border: 1px solid var(--app-border-1)">
+        <span>--app-surface-2</span>
+      </div>
+      <div class="token-swatch" style="background: var(--app-surface-3); color: var(--app-text-1); border: 1px solid var(--app-border-1)">
+        <span>--app-surface-3</span>
+      </div>
+    </div>
+    <p class="ui-kit-hint">
+      Toggle theme from the header to verify light/dark tokens.
+    </p>
+  </app-ui-card>
+
+  <app-ui-card title="Components" subtitle="Wrappers on top of PrimeNG">
+    <form class="demo-form" [formGroup]="form" (ngSubmit)="submit()">
+      <app-ui-input-text label="Name" placeholder="Jane Doe" helpText="Required field." formControlName="name" />
+      <app-ui-select
+        label="Country"
+        placeholder="Select a country"
+        helpText="Required field."
+        [options]="countries"
+        optionLabel="name"
+        optionValue="code"
+        formControlName="country"
+      />
+
+      <div class="demo-actions">
+        <app-ui-button label="Primary" severity="primary" />
+        <app-ui-button label="Outlined" severity="primary" variant="outlined" />
+        <app-ui-button label="Submit" type="submit" severity="primary" [loading]="submitting()" [disabled]="submitting()" />
+      </div>
+    </form>
+  </app-ui-card>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="ui-field">
+  @if (label(); as labelText) {
+    <label class="ui-field__label" [for]="inputId">{{ labelText }}</label>
+  }
+
+  <input
+    pInputText
+    class="ui-field__control"
+    [id]="inputId"
+    [type]="type()"
+    [placeholder]="placeholder() ?? ''"
+    [autocomplete]="autocomplete()"
+    [disabled]="disabled()"
+    [value]="value()"
+    [attr.aria-invalid]="isInvalid()"
+    [attr.aria-describedby]="describedBy()"
+    (input)="onInput(($any($event.target)).value)"
+    (blur)="markTouched()"
+  />
+
+  @if (helpText(); as help) {
+    <div class="ui-field__help" [id]="helpId">{{ help }}</div>
+  }
+
+  @if (errorText(); as error) {
+    <div class="ui-field__error" [id]="errorId" role="alert">{{ error }}</div>
+  }
+</div>

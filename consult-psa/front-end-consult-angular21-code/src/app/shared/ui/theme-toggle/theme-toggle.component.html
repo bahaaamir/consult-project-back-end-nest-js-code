@@ -1,0 +1,11 @@
+<button
+  class="theme-toggle"
+  type="button"
+  (click)="toggle()"
+  [attr.aria-pressed]="mode() === 'dark'"
+  [attr.aria-label]="'Switch to ' + nextModeLabel() + ' mode'"
+>
+  <span>Theme</span>
+  <span class="theme-toggle__hint">{{ mode() === 'dark' ? 'Dark' : 'Light' }}</span>
+</button>
+

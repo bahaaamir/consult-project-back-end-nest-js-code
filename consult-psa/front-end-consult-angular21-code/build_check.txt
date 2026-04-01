@@ -1,0 +1,32 @@
+﻿[1mInitial chunk files[22m[2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mstyles-FM3ID7HE.css[39m[2m | [22m[2mstyles[22m                    [2m | [22m[36m361.34 kB[39m[2m | [22m               [36m20.40 kB[39m
+[32mchunk-JIRAJHE6.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m273.40 kB[39m[2m | [22m               [36m73.28 kB[39m
+[32mmain-F6MC4R62.js[39m   [2m | [22m[2mmain[22m                      [2m | [22m[36m110.16 kB[39m[2m | [22m               [36m12.50 kB[39m
+[32mchunk-GBKADEWV.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m44.96 kB[39m[2m | [22m               [36m13.15 kB[39m
+[32mchunk-7CGTOI24.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m618 bytes[39m[2m | [22m              [36m618 bytes[39m
+[32mchunk-XIVCQ3KB.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m542 bytes[39m[2m | [22m              [36m542 bytes[39m
+[32mchunk-FHFF5F5N.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m488 bytes[39m[2m | [22m              [36m488 bytes[39m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m             [2m | [22m[1m791.51 kB[22m[2m | [22m              [1m120.99 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-DE6QRPZZ.js[39m  [2m | [22m[2mui-kit-page-component[22m     [2m | [22m[36m122.60 kB[39m[2m | [22m               [36m26.94 kB[39m
+[32mchunk-6TBYXI5U.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m63.00 kB[39m[2m | [22m               [36m10.54 kB[39m
+[32mchunk-5WJMM4VA.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m40.83 kB[39m[2m | [22m                [36m9.32 kB[39m
+[32mchunk-4TXRFUBH.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m27.77 kB[39m[2m | [22m                [36m7.48 kB[39m
+[32mchunk-R2FKGYZF.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m21.72 kB[39m[2m | [22m                [36m5.28 kB[39m
+[32mchunk-K27DND4G.js[39m  [2m | [22m[2mapp-shell-layout-component[22m[2m | [22m [36m12.56 kB[39m[2m | [22m                [36m3.23 kB[39m
+[32mchunk-CQIEM7DY.js[39m  [2m | [22m[2mdashboard-index-component[22m [2m | [22m [36m11.80 kB[39m[2m | [22m                [36m3.14 kB[39m
+[32mchunk-S6E7ZBPZ.js[39m  [2m | [22m[2msignup-page-component[22m     [2m | [22m  [36m5.36 kB[39m[2m | [22m                [36m1.81 kB[39m
+[32mchunk-XHAFT4RU.js[39m  [2m | [22m[2mlogin-page-component[22m      [2m | [22m  [36m4.69 kB[39m[2m | [22m                [36m1.68 kB[39m
+[32mchunk-RKKKLCRE.js[39m  [2m | [22m[2mauth-layout-component[22m     [2m | [22m  [36m2.84 kB[39m[2m | [22m                [36m1.02 kB[39m
+[32mchunk-2HYA2UQ5.js[39m  [2m | [22m[2m-[22m                         [2m | [22m  [36m2.72 kB[39m[2m | [22m              [36m907 bytes[39m
+[32mchunk-QD5YYX4F.js[39m  [2m | [22m[2mauth-routes[22m               [2m | [22m[36m499 bytes[39m[2m | [22m              [36m499 bytes[39m
+[32mchunk-WTMBZDVD.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m190 bytes[39m[2m | [22m              [36m190 bytes[39m
+[32mchunk-RNO4V6YC.js[39m  [2m | [22m[2mhome-routes[22m               [2m | [22m[36m155 bytes[39m[2m | [22m              [36m155 bytes[39m
+[32mchunk-RA5D5AM4.js[39m  [2m | [22m[2mui-kit-routes[22m             [2m | [22m[36m152 bytes[39m[2m | [22m              [36m152 bytes[39m
+
+Application bundle generation complete. [12.575 seconds] - 2026-03-28T15:08:05.350Z
+
+Output location: E:\consult project\consult-psa\front-end-consult-angular21-code\dist\front-end-consult-angular21-code
+

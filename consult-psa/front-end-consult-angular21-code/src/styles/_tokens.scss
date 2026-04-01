@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════════════════
+   Design Tokens — Consult OS
+   ═══════════════════════════════════════════════════════
+   Colors, surfaces, borders, and text colors are
+   controlled by the PrimeNG ConsultPreset and bridged
+   here so every --app-* reference keeps working.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Typography ── */
+  --app-font-sans: "Saira", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* ── Layout ── */
+  --app-content-max: 1100px;
+  --app-sidebar-w: 260px;
+  --app-sidebar-w-collapsed: 68px;
+
+  /* ── Spacing (4px base) ── */
+  --app-space-1: 0.25rem;
+  --app-space-2: 0.5rem;
+  --app-space-3: 0.75rem;
+  --app-space-4: 1rem;
+  --app-space-5: 1.5rem;
+  --app-space-6: 2rem;
+  --app-space-7: 3rem;
+
+  /* ── Radii ── */
+  --app-radius-sm: 0.375rem;
+  --app-radius-md: 0.5rem;
+  --app-radius-lg: 0.75rem;
+
+  /* ── Brand extras (not in PrimeNG) ── */
+  --app-accent: #22c55e;
+  --app-brand-gradient: linear-gradient(135deg, var(--app-primary), #38bdf8 45%, #a78bfa);
+
+  /* ═══════════════════════════════════════════════════════
+     Bridge Variables
+     ═══════════════════════════════════════════════════════
+     Map old --app-* color tokens to PrimeNG's runtime
+     CSS variables. This lets every existing SCSS file
+     keep using var(--app-primary) etc. unchanged, while
+     PrimeNG is the single source of truth — including
+     automatic light/dark switching.
+     ═══════════════════════════════════════════════════════ */
+
+  /* Colors */
+  --app-primary:    var(--p-primary-color);
+  --app-surface-1:  var(--p-surface-0);
+  --app-surface-2:  var(--p-surface-50);
+  --app-surface-3:  var(--p-surface-100);
+  --app-text-1:     var(--p-text-color);
+  --app-text-2:     var(--p-text-muted-color);
+  --app-border-1:   var(--p-content-border-color);
+  --app-danger:     var(--p-red-500);
+  --app-success:    var(--p-green-600);
+  --app-warning:    var(--p-yellow-600);
+  --app-focus-ring: color-mix(in srgb, var(--p-primary-color) 45%, transparent);
+  --app-shadow-1:   0 10px 30px color-mix(in srgb, var(--p-primary-color) 18%, transparent);
+}
+
+/* Dark overrides for bridge tokens that need manual adjustment */
+.app-dark {
+  /* Brand */
+  --app-accent:         #4ade80;
+  --app-brand-gradient: linear-gradient(135deg, var(--app-primary), #60a5fa 45%, #c084fc);
+  
+  /* PrimeNG primitives stay constant, so we must map our surfaces to the dark palette */
+  --app-surface-1:      var(--p-surface-900);
+  --app-surface-2:      var(--p-surface-950);
+  --app-surface-3:      var(--p-surface-800);
+  
+  /* Other corrections */
+  --app-danger:         var(--p-red-400);
+  --app-success:        var(--p-green-400);
+  --app-warning:        var(--p-yellow-400);
+  --app-focus-ring:     color-mix(in srgb, var(--p-primary-color) 55%, transparent);
+  --app-shadow-1:       0 10px 30px color-mix(in srgb, var(--p-primary-color) 22%, transparent);
+}

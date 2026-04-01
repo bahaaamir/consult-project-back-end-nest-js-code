@@ -1,0 +1,26 @@
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-2);
+  padding: var(--app-space-2) var(--app-space-3);
+  border-radius: var(--app-radius-md);
+  border: 1px solid var(--app-border-1);
+  background: var(--app-surface-2);
+  color: var(--app-text-1);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--app-surface-3);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--app-focus-ring);
+  outline-offset: 2px;
+}
+
+.theme-toggle__hint {
+  color: var(--app-text-2);
+  font-size: 0.875rem;
+}
+

@@ -1,0 +1,31 @@
+@if (to(); as toLink) {
+  <a
+    pButton
+    [routerLink]="toLink"
+    [label]="$any(label())"
+    [icon]="$any(icon())"
+    [iconPos]="$any(iconPos())"
+    [severity]="severity()"
+    [outlined]="variant() === 'outlined'"
+    [text]="variant() === 'text' || variant() === 'link'"
+    [size]="size()"
+    [loading]="loading()"
+    [attr.aria-disabled]="disabled() || loading()"
+    [attr.tabindex]="disabled() || loading() ? -1 : 0"
+    (click)="onAnchorClick($event)"
+  ></a>
+} @else {
+  <p-button
+    [label]="$any(label())"
+    [icon]="$any(icon())"
+    [iconPos]="$any(iconPos())"
+    [severity]="severity()"
+    [variant]="$any(variant() === 'link' ? undefined : variant())"
+    [link]="variant() === 'link'"
+    [size]="size()"
+    [loading]="loading()"
+    [disabled]="disabled()"
+    [type]="type()"
+    (onClick)="clicked.emit($event)"
+  />
+}

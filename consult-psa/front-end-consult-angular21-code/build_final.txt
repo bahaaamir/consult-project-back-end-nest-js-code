@@ -1,0 +1,65 @@
+﻿[1mInitial chunk files[22m[2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mstyles-FM3ID7HE.css[39m[2m | [22m[2mstyles[22m                    [2m | [22m[36m361.34 kB[39m[2m | [22m               [36m20.40 kB[39m
+[32mchunk-PZFAJF6H.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m273.40 kB[39m[2m | [22m               [36m73.28 kB[39m
+[32mmain-VV46FDHB.js[39m   [2m | [22m[2mmain[22m                      [2m | [22m[36m110.16 kB[39m[2m | [22m               [36m12.51 kB[39m
+[32mchunk-RAOWYYQZ.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m44.96 kB[39m[2m | [22m               [36m13.17 kB[39m
+[32mchunk-7CGTOI24.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m618 bytes[39m[2m | [22m              [36m618 bytes[39m
+[32mchunk-FZBLLYYH.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m542 bytes[39m[2m | [22m              [36m542 bytes[39m
+[32mchunk-AN7NBHQK.js[39m  [2m | [22m[2m-[22m                         [2m | [22m[36m488 bytes[39m[2m | [22m              [36m488 bytes[39m
+
+[1m [22m                  [2m | [22m[1mInitial total[22m             [2m | [22m[1m[93m791.51 kB[39m[22m[2m | [22m              [1m121.02 kB[22m
+
+[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                     [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mchunk-XEDOUU43.js[39m  [2m | [22m[2mui-kit-page-component[22m     [2m | [22m[36m122.60 kB[39m[2m | [22m               [36m26.94 kB[39m
+[32mchunk-KYJRCHHB.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m63.00 kB[39m[2m | [22m               [36m10.57 kB[39m
+[32mchunk-CDZKNTU7.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m40.83 kB[39m[2m | [22m                [36m9.32 kB[39m
+[32mchunk-PWXU7WAZ.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m27.77 kB[39m[2m | [22m                [36m7.47 kB[39m
+[32mchunk-S6R7P6R6.js[39m  [2m | [22m[2m-[22m                         [2m | [22m [36m21.72 kB[39m[2m | [22m                [36m5.28 kB[39m
+[32mchunk-OC2G7LQF.js[39m  [2m | [22m[2mapp-shell-layout-component[22m[2m | [22m [36m11.84 kB[39m[2m | [22m                [36m3.08 kB[39m
+[32mchunk-MK6HPOWO.js[39m  [2m | [22m[2mhome-page-component[22m       [2m | [22m  [36m9.93 kB[39m[2m | [22m                [36m2.78 kB[39m
+[32mchunk-TTSMPW6U.js[39m  [2m | [22m[2msignup-page-component[22m     [2m | [22m  [36m5.36 kB[39m[2m | [22m                [36m1.81 kB[39m
+[32mchunk-QZJMHBUI.js[39m  [2m | [22m[2mlogin-page-component[22m      [2m | [22m  [36m4.69 kB[39m[2m | [22m                [36m1.68 kB[39m
+[32mchunk-VFHQPRHB.js[39m  [2m | [22m[2m-[22m                         [2m | [22m  [36m2.72 kB[39m[2m | [22m              [36m902 bytes[39m
+[32mchunk-FEQASTUK.js[39m  [2m | [22m[2mauth-layout-component[22m     [2m | [22m  [36m2.64 kB[39m[2m | [22m              [36m958 bytes[39m
+[32mchunk-4CN7XEB5.js[39m  [2m | [22m[2mauth-routes[22m               [2m | [22m[36m499 bytes[39m[2m | [22m              [36m499 bytes[39m
+[32mchunk-COZYU2XE.js[39m  [2m | [22m[2mui-kit-routes[22m             [2m | [22m[36m152 bytes[39m[2m | [22m              [36m152 bytes[39m
+[32mchunk-DGCBTSP5.js[39m  [2m | [22m[2mhome-routes[22m               [2m | [22m[36m149 bytes[39m[2m | [22m              [36m149 bytes[39m
+
+Application bundle generation complete. [3.757 seconds] - 2026-03-28T14:29:04.655Z
+
+node.exe : [1m[33m[33mΓû▓ 
+[43;33m[[43;30mWARNING[43;33m][0m 
+[1mbundle initial exceeded maximum 
+budget. Budget 500.00 kB was not met by 
+291.51 kB with a total of 791.51 kB.[0m
+At C:\Program Files\nodejs\npx.ps1:29 
+char:3
++   & $NODE_EXE $NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: ([1m[33m[33mΓ... 791.51 kB.[0m  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+
+
+[33mΓû▓ 
+[43;33m[[43;30mWARNING[43;33m][0m [1m
+src/app/core/layouts/app-shell-layout/app-
+shell-layout.component.scss exceeded 
+maximum budget. Budget 4.00 kB was not 
+met by 697 bytes with a total of 4.70 
+kB.[0m
+
+
+[33mΓû▓ 
+[43;33m[[43;30mWARNING[43;33m][0m [1m
+src/app/features/home/pages/home-page/home
+-page.component.scss exceeded maximum 
+budget. Budget 4.00 kB was not met by 120 
+bytes with a total of 4.12 kB.[0m
+
+[39m[22m
+Output location: E:\consult project\consult-psa\front-end-consult-angular21-code\dist\front-end-consult-angular21-code
+

@@ -1,0 +1,23 @@
+@switch (role()) {
+  @case (roles.SUPER_ADMIN) {
+    <app-super-admin-dashboard />
+  }
+  @case (roles.OWNER) {
+    <app-office-dashboard />
+  }
+  @case (roles.MANAGER) {
+    <app-office-dashboard />
+  }
+  @case (roles.EMPLOYEE) {
+    <app-employee-dashboard />
+  }
+  @case (roles.CLIENT_OWNER) {
+    <app-client-dashboard />
+  }
+  @case (roles.CLIENT_EMPLOYEE) {
+    <app-client-dashboard />
+  }
+  @default {
+    <p>No dashboard configured for your role.</p>
+  }
+}

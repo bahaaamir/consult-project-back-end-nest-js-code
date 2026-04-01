@@ -1,0 +1,44 @@
+.ui-kit-grid {
+  display: grid;
+  gap: var(--app-space-4);
+}
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--app-space-3);
+}
+
+.token-swatch {
+  display: grid;
+  place-items: end start;
+  min-height: 84px;
+  border-radius: var(--app-radius-md);
+  padding: var(--app-space-3);
+  color: #ffffff;
+}
+
+.token-swatch span {
+  font-size: 0.875rem;
+  background: color-mix(in srgb, #000 45%, transparent);
+  padding: var(--app-space-1) var(--app-space-2);
+  border-radius: var(--app-radius-sm);
+}
+
+.ui-kit-hint {
+  margin: var(--app-space-3) 0 0;
+  color: var(--app-text-2);
+}
+
+.demo-form {
+  display: grid;
+  gap: var(--app-space-4);
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-2);
+  justify-content: flex-end;
+}
+

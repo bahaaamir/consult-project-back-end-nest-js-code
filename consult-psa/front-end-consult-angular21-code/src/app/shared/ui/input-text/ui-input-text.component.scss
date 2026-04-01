@@ -1,0 +1,24 @@
+.ui-field {
+  display: grid;
+  gap: var(--app-space-2);
+}
+
+.ui-field__label {
+  font-weight: 600;
+  color: var(--app-text-1);
+}
+
+.ui-field__control {
+  width: 100%;
+}
+
+.ui-field__help {
+  color: var(--app-text-2);
+  font-size: 0.875rem;
+}
+
+.ui-field__error {
+  color: var(--app-danger);
+  font-size: 0.875rem;
+}
+

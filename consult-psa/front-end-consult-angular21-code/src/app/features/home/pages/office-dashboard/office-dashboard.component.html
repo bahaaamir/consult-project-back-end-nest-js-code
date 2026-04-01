@@ -1,0 +1,91 @@
+<app-ui-page-header title="Dashboard" [subtitle]="'Welcome, ' + (currentUser()?.name ?? 'Team') + '.'">
+  <app-ui-button label="Create Project" severity="primary" icon="pi pi-plus" />
+</app-ui-page-header>
+
+<section class="kpi-grid" aria-label="Key metrics">
+  @for (kpi of kpis; track kpi.title; let idx = $index) {
+    <div class="kpi-card" [style.animation-delay]="idx * 80 + 'ms'">
+      <div class="kpi-card__icon-wrap">
+        <i [class]="kpi.icon"></i>
+      </div>
+      <div class="kpi-card__body">
+        <span class="kpi-card__title">{{ kpi.title }}</span>
+        <p class="kpi-card__value">{{ kpi.value }}</p>
+        <p class="kpi-card__trend" [class.kpi-card__trend--up]="kpi.trendUp" [class.kpi-card__trend--down]="!kpi.trendUp">
+          <i [class]="kpi.trendUp ? 'pi pi-arrow-up' : 'pi pi-arrow-down'" class="kpi-card__trend-icon"></i>
+          {{ kpi.trend }}
+        </p>
+      </div>
+    </div>
+  }
+</section>
+
+<section class="dashboard-grid">
+  <app-ui-card title="Project pipeline" subtitle="Current delivery health by project">
+    <div class="project-table-wrap">
+      <table class="project-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Client</th>
+            <th>Progress</th>
+            <th>Status</th>
+            <th>Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (project of projects; track project.name) {
+            <tr class="project-row">
+              <td class="project-row__name">{{ project.name }}</td>
+              <td>{{ project.client }}</td>
+              <td>
+                <div class="progress-cell">
+                  <span>{{ project.progress }}%</span>
+                  <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="project.progress" aria-valuemin="0" aria-valuemax="100">
+                    <span class="progress-bar__fill" [style.width.%]="project.progress"></span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <span
+                  class="status-chip"
+                  [class.status-chip--track]="project.status === 'On Track'"
+                  [class.status-chip--risk]="project.status === 'At Risk'"
+                  [class.status-chip--blocked]="project.status === 'Blocked'"
+                >
+                  {{ project.status }}
+                </span>
+              </td>
+              <td>{{ project.dueDate }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </app-ui-card>
+
+  <div class="dashboard-side">
+    <app-ui-card title="Recent activity" subtitle="Latest events across projects">
+      <ul class="activity-list">
+        @for (activity of activities; track activity.text) {
+          <li class="activity-item">
+            <i [class]="activity.icon" class="activity-item__icon"></i>
+            <div class="activity-item__body">
+              <p class="activity-item__text">{{ activity.text }}</p>
+              <p class="activity-item__time">{{ activity.time }}</p>
+            </div>
+          </li>
+        }
+      </ul>
+    </app-ui-card>
+
+    <app-ui-card title="Quick actions">
+      <div class="quick-actions">
+        <app-ui-button label="New Invoice" icon="pi pi-plus" severity="primary" variant="outlined" />
+        <app-ui-button label="Invite Member" icon="pi pi-user-plus" variant="outlined" />
+        <app-ui-button label="Create Client" icon="pi pi-briefcase" variant="outlined" />
+        <app-ui-button label="View Reports" icon="pi pi-chart-bar" variant="outlined" />
+      </div>
+    </app-ui-card>
+  </div>
+</section>

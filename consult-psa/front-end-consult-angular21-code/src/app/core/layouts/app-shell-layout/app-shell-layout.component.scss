@@ -1,0 +1,297 @@
+/* ─── Shell Grid ─── */
+.shell {
+  --sidebar-w: var(--app-sidebar-w);
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+  background: var(--app-surface-1);
+  color: var(--app-text-1);
+  transition: grid-template-columns 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shell--collapsed {
+  --sidebar-w: var(--app-sidebar-w-collapsed);
+}
+
+/* ─── Sidebar ─── */
+.shell__sidebar {
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  background: var(--app-surface-2);
+  border-inline-end: 1px solid var(--app-border-1);
+  overflow: hidden;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Sidebar Header / Brand ─── */
+.sidebar__header {
+  padding: var(--app-space-4);
+  border-bottom: 1px solid var(--app-border-1);
+}
+
+.sidebar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-3);
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.sidebar__brand-logo {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.sidebar__brand-text {
+  overflow: hidden;
+  animation: fadeLabel 0.25s ease;
+}
+
+/* ─── Sidebar Nav ─── */
+.sidebar__nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-1);
+  padding: var(--app-space-3);
+  overflow-y: auto;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--app-space-3);
+  padding: var(--app-space-3);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text-2);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.sidebar__link:hover {
+  color: var(--app-primary);
+  background: color-mix(in srgb, var(--app-primary) 6%, transparent);
+}
+
+.sidebar__link.is-active {
+  color: var(--app-primary);
+  background: color-mix(in srgb, var(--app-primary) 10%, transparent);
+  font-weight: 600;
+}
+
+.sidebar__link-icon {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  width: 1.25rem;
+  text-align: center;
+}
+
+.sidebar__link-label {
+  overflow: hidden;
+  animation: fadeLabel 0.25s ease;
+}
+
+/* ─── Sidebar Footer ─── */
+.sidebar__footer {
+  margin-top: auto;
+  padding: var(--app-space-3);
+  border-top: 1px solid var(--app-border-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-2);
+}
+
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--app-space-3);
+  padding: var(--app-space-2) var(--app-space-3);
+}
+
+.sidebar__avatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--app-brand-gradient);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.sidebar__user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeLabel 0.25s ease;
+}
+
+.sidebar__user-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--app-text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__user-role {
+  font-size: 0.75rem;
+  color: var(--app-text-2);
+  text-transform: capitalize;
+}
+
+.sidebar__link--logout {
+  color: var(--app-danger);
+}
+.sidebar__link--logout:hover {
+  background: color-mix(in srgb, var(--app-danger) 10%, transparent);
+}
+
+/* ─── Topbar ─── */
+.shell__topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--app-space-3);
+  padding: var(--app-space-3) var(--app-space-4);
+  border-bottom: 1px solid var(--app-border-1);
+  background: color-mix(in srgb, var(--app-surface-1) 92%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.topbar__collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--app-border-1);
+  border-radius: var(--app-radius-md);
+  background: var(--app-surface-2);
+  color: var(--app-text-2);
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+.topbar__collapse-btn:hover {
+  background: var(--app-surface-3);
+  color: var(--app-text-1);
+}
+
+.topbar__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: var(--app-radius-md);
+  background: var(--app-surface-2);
+  color: var(--app-text-1);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.topbar__spacer {
+  flex: 1;
+}
+
+.topbar__user-name {
+  color: var(--app-text-2);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* ─── Main ─── */
+.shell__main {
+  padding: var(--app-space-6) var(--app-space-5);
+  overflow-y: auto;
+}
+
+.shell__content {
+  margin-inline: auto;
+ // max-width: var(--app-content-max);
+}
+
+/* ─── Overlay ─── */
+.shell__overlay {
+  display: none;
+}
+
+/* ─── Animation ─── */
+@keyframes fadeLabel {
+  0% { opacity: 0; transform: translateX(-6px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 768px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .shell__sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 100;
+    width: var(--app-sidebar-w);
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+  }
+
+  .shell--mobile-open .shell__sidebar {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .shell--mobile-open .shell__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.2s ease;
+  }
+
+  .topbar__collapse-btn {
+    display: none;
+  }
+
+  .topbar__hamburger {
+    display: flex;
+  }
+
+  /* Reset collapsed on mobile */
+  .shell--collapsed {
+    --sidebar-w: var(--app-sidebar-w);
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

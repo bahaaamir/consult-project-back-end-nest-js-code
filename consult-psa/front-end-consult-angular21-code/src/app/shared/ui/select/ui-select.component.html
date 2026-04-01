@@ -1,0 +1,30 @@
+<div class="ui-field">
+  @if (label(); as labelText) {
+    <label class="ui-field__label" [for]="inputId">{{ labelText }}</label>
+  }
+
+  <p-select
+    class="ui-field__control"
+    [inputId]="inputId"
+    [options]="options()"
+    [optionLabel]="optionLabel()"
+    [optionValue]="optionValue()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [ngModel]="value()"
+    [class.ng-invalid]="isInvalid()"
+    [class.ng-dirty]="isInvalid()"
+    [attr.aria-invalid]="isInvalid()"
+    [attr.aria-describedby]="describedBy()"
+    (ngModelChange)="onModelChange($event)"
+    (onBlur)="markTouched()"
+  />
+
+  @if (helpText(); as help) {
+    <div class="ui-field__help" [id]="helpId">{{ help }}</div>
+  }
+
+  @if (errorText(); as error) {
+    <div class="ui-field__error" [id]="errorId" role="alert">{{ error }}</div>
+  }
+</div>

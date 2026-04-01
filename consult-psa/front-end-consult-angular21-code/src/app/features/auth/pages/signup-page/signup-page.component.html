@@ -1,0 +1,55 @@
+<app-ui-card>
+  <div class="auth-eyebrow">
+    <span class="auth-eyebrow__dot" aria-hidden="true"></span>
+    <span>Owner onboarding</span>
+  </div>
+
+  <app-ui-page-header title="Create your office account" subtitle="Start with owner access and onboard your team later." />
+
+  <form class="signup-form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="signup-grid">
+      <app-ui-input-text label="Full name" placeholder="Office owner name" formControlName="name" />
+      <app-ui-input-text label="Company name" placeholder="Acme Consulting" formControlName="company_name" />
+      <app-ui-input-text label="Email" type="email" placeholder="name@company.com" autocomplete="email" formControlName="email" />
+      <app-ui-input-text
+        label="Password"
+        type="password"
+        autocomplete="new-password"
+        helpText="Use at least 8 characters."
+        formControlName="password"
+      />
+    </div>
+
+    @if (authError(); as message) {
+      <p class="signup-error" role="alert">{{ message }}</p>
+    }
+
+    <div class="signup-meta">
+      <p>You can invite managers and employees after setup. Your office data remains isolated by default.</p>
+    </div>
+
+    <div class="signup-actions">
+      <app-ui-button
+        label="Create account"
+        type="submit"
+        severity="primary"
+        [loading]="submitting()"
+        [disabled]="submitting()"
+      />
+    </div>
+  </form>
+
+  <section class="auth-proof" aria-label="What you get after signup">
+    <h3>From first login, your workspace is ready for</h3>
+    <ul>
+      <li>Project boards and milestone tracking</li>
+      <li>Client collaboration with controlled visibility</li>
+      <li>Invoice workflows and status transparency</li>
+    </ul>
+  </section>
+
+  <p class="signup-alt-action">
+    Already have an account?
+    <a routerLink="/auth/login">Sign in</a>
+  </p>
+</app-ui-card>

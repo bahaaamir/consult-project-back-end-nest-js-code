@@ -1,0 +1,85 @@
+<div class="shell" [class.shell--collapsed]="sidebarCollapsed()" [class.shell--mobile-open]="mobileSidebarOpen()">
+
+  <!-- Mobile overlay -->
+  <div class="shell__overlay" (click)="closeMobileSidebar()"></div>
+
+  <!-- Sidebar -->
+  <aside class="shell__sidebar" aria-label="Main navigation">
+    <div class="sidebar__header">
+      <a class="sidebar__brand" routerLink="/">
+        <img class="sidebar__brand-logo" src="/logoPngjpg.jpg" alt="Consulting OS" />
+        @if (!sidebarCollapsed()) {
+          <span class="sidebar__brand-text">Consulting OS</span>
+        }
+      </a>
+    </div>
+
+    <nav class="sidebar__nav">
+      @for (item of navItems(); track item.route) {
+        <a
+          class="sidebar__link"
+          [routerLink]="item.route"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: item.exact }"
+          [pTooltip]="sidebarCollapsed() ? item.label : ''"
+          tooltipPosition="right"
+          (click)="closeMobileSidebar()"
+        >
+          <i [class]="item.icon" class="sidebar__link-icon"></i>
+          @if (!sidebarCollapsed()) {
+            <span class="sidebar__link-label">{{ item.label }}</span>
+          }
+        </a>
+      }
+    </nav>
+
+    <div class="sidebar__footer">
+      @if (currentUser(); as user) {
+        <div class="sidebar__user">
+          <span class="sidebar__avatar">{{ user.name.charAt(0) || 'U' }}</span>
+          @if (!sidebarCollapsed()) {
+            <div class="sidebar__user-info">
+              <span class="sidebar__user-name">{{ user.name }}</span>
+              <span class="sidebar__user-role">{{ user.role }}</span>
+            </div>
+          }
+        </div>
+      }
+      <button
+        class="sidebar__link sidebar__link--logout"
+        (click)="logout()"
+        [pTooltip]="sidebarCollapsed() ? 'Logout' : ''"
+        tooltipPosition="right"
+      >
+        <i class="pi pi-sign-out sidebar__link-icon"></i>
+        @if (!sidebarCollapsed()) {
+          <span class="sidebar__link-label">Logout</span>
+        }
+      </button>
+    </div>
+  </aside>
+
+  <!-- Topbar -->
+  <header class="shell__topbar">
+    <button class="topbar__hamburger" (click)="toggleMobileSidebar()" aria-label="Toggle menu">
+      <i class="pi pi-bars"></i>
+    </button>
+    <button class="topbar__collapse-btn" (click)="toggleSidebar()" aria-label="Toggle sidebar" >
+      <i [class]="sidebarCollapsed() ? 'pi pi-angle-right' : 'pi pi-angle-left'"></i>
+    </button>
+
+    <div class="topbar__spacer"></div>
+
+    <app-theme-toggle />
+    @if (currentUser(); as user) {
+      <span class="topbar__user-name">{{ user.name }}</span>
+    }
+  </header>
+
+  <!-- Main content -->
+  <main class="shell__main" id="main">
+    <div class="shell__content">
+      <router-outlet />
+    </div>
+  </main>
+</div>

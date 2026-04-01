@@ -1,0 +1,51 @@
+<app-ui-card>
+  <div class="auth-eyebrow">
+    <span class="auth-eyebrow__dot" aria-hidden="true"></span>
+    <span>Secure office access</span>
+  </div>
+
+  <app-ui-page-header title="Welcome back" subtitle="Sign in to your office workspace." />
+
+  <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+    <app-ui-input-text label="Email" type="email" placeholder="name@company.com" autocomplete="email" formControlName="email" />
+    <app-ui-input-text
+      label="Password"
+      type="password"
+      autocomplete="current-password"
+      helpText="Minimum 8 characters."
+      formControlName="password"
+    />
+
+    @if (authError(); as message) {
+      <p class="login-error" role="alert">{{ message }}</p>
+    }
+
+    <div class="login-meta">
+      <p>Protected with role-based access and tenant isolation.</p>
+    </div>
+
+    <div class="login-actions">
+      <app-ui-button
+        label="Sign in"
+        type="submit"
+        severity="primary"
+        [loading]="submitting()"
+        [disabled]="submitting()"
+      />
+    </div>
+  </form>
+
+  <section class="auth-proof" aria-label="Why teams use Consulting OS">
+    <h3>Built for focused consulting operations</h3>
+    <ul>
+      <li>Project and client visibility in one workspace</li>
+      <li>Clear permission boundaries per office</li>
+      <li>Real-time updates across teams and clients</li>
+    </ul>
+  </section>
+
+  <p class="login-alt-action">
+    Don't have an account?
+    <a routerLink="/auth/signup">Create office account</a>
+  </p>
+</app-ui-card>
