@@ -13,20 +13,20 @@ export { UserRole };
 export class InviteDto {
   @IsNotEmpty()
   @IsString()
-  name: string;
+  name!: string;
 
   @IsEmail(
     {},
     { message: 'Please provide a valid email address for the invitee' },
   )
   @IsNotEmpty()
-  email: string;
+  email!: string;
 
   @IsEnum(UserRole, {
     message: 'Role must be super_admin, owner, manager, or employee',
   })
   @IsNotEmpty()
-  role: UserRole;
+  role!: UserRole;
 
   @IsOptional()
   @IsString()
@@ -36,11 +36,11 @@ export class InviteDto {
 export class AcceptInviteDto {
   @IsString()
   @IsNotEmpty()
-  token: string;
+  token!: string;
 
   @IsString()
   @MinLength(8, {
     message: 'Your new password must be at least 8 characters long',
   })
-  password: string;
+  password!: string;
 }
